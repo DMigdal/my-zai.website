@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +47,7 @@
         
         html { 
             scroll-behavior: smooth; 
-            /* FIX: Ensures content isn't hidden behind the sticky header when clicking links */
+            /* FIX: Ensures content isn't hidden behind sticky header when clicking links */
             scroll-padding-top: 100px; 
         }
 
@@ -114,34 +113,13 @@
             background-color: var(--accent-blue);
             color: #fff;
         }
-        
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--text-black);
-            color: var(--text-black);
-        }
 
-        [data-theme="dark"] .btn-outline {
-            border-color: #fff;
-            color: #fff;
-        }
-
-        .btn-outline:hover {
-            background: var(--text-black);
-            color: #fff;
-        }
-
-        .section-padding { padding: 100px 0; }
-        
-        /* Scroll Animation Class */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        /* Larger Button for Contact Section */
+        .btn-large {
+            padding: 24px 48px;
+            font-size: 1.2rem;
+            width: 100%;
+            border-radius: 8px;
         }
 
         /* --- HEADER --- */
@@ -221,52 +199,6 @@
         [data-theme="dark"] .control-btn:hover { background: rgba(255,255,255,0.1); }
         
         .control-btn svg { width: 20px; height: 20px; fill: currentColor; }
-
-        /* --- ADMIN MODAL --- */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.8);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background-color: var(--bg-card);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            width: 90%;
-            max-width: 500px;
-            box-shadow: var(--shadow-lg);
-            text-align: center;
-            position: relative;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 28px;
-            cursor: pointer;
-            color: var(--text-gray);
-        }
-
-        .close-modal:hover { color: var(--text-black); }
-
-        .upload-area {
-            border: 2px dashed var(--text-gray);
-            padding: 30px;
-            margin: 20px 0;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-        }
-
-        .upload-area:hover { border-color: var(--accent-blue); background: var(--bg-light); }
 
         /* --- HERO --- */
         .hero {
@@ -395,9 +327,9 @@
 
         .about-img-wrapper {
             position: relative;
-            background-color: var(--bg-light); /* Added background to fill space since image is hidden */
+            background-color: var(--bg-light); 
             border-radius: var(--border-radius);
-            min-height: 400px; /* Maintain height even without image */
+            min-height: 400px;
         }
         
         .about-img {
@@ -406,8 +338,6 @@
             object-fit: cover;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-lg);
-            
-            /* FIX: Hiding the broken image element completely */
             display: none; 
         }
 
@@ -479,36 +409,6 @@
             font-size: 0.95rem;
         }
 
-        /* --- GALLERY (ADMIN UPLOADS) --- */
-        .gallery-section {
-            background-color: var(--bg-white);
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .gallery-item {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            aspect-ratio: 1 / 1;
-            position: relative;
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
         /* --- AREAS (Full Width Blue) --- */
         .areas-banner {
             background-color: var(--primary-blue);
@@ -555,12 +455,13 @@
 
         .contact-container {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
+            grid-template-columns: 1fr 1fr;
             gap: 80px;
+            align-items: center;
         }
 
         .contact-info {
-            padding-right: 40px;
+            padding-right: 0;
         }
 
         .info-block {
@@ -578,7 +479,7 @@
 
         .info-block p {
             color: var(--text-gray);
-            padding-left: 36px;
+            padding-left: 0;
         }
 
         .hours {
@@ -596,46 +497,65 @@
             color: var(--text-gray);
         }
 
-        /* Form Styling */
-        .form-box {
-            background: var(--bg-white);
-            padding: 50px;
+        /* --- New Call Box Styles --- */
+        .contact-call-box {
+            background: var(--bg-card);
+            padding: 60px 40px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-lg);
-            border: 1px solid rgba(0,0,0,0.05);
+            text-align: center;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .call-icon-large {
+            margin-bottom: 20px;
+            color: var(--accent-blue);
         }
         
-        [data-theme="dark"] .form-box { border-color: rgba(255,255,255,0.05); }
+        .call-icon-large svg {
+            width: 60px;
+            height: 60px;
+            fill: currentColor;
+        }
 
-        .form-group { margin-bottom: 24px; }
+        .big-phone {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-black);
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        
+        /* New Styles for "OR" Separator */
+        .phone-numbers {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
+        .or-text {
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0 10px;
             font-size: 0.9rem;
-            font-weight: 600;
+            color: var(--text-gray);
+            letter-spacing: 1px;
+        }
+
+        .call-details h3 {
+            font-size: 1.5rem;
             color: var(--text-black);
+            margin-bottom: 10px;
         }
 
-        .form-control {
-            width: 100%;
-            padding: 16px;
-            border: 1px solid #e2e8f0;
-            border-radius: var(--border-radius);
-            background: var(--bg-light);
-            color: var(--text-black);
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: var(--transition);
+        .call-details p {
+            color: var(--text-gray);
         }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-            background: var(--bg-white);
-        }
-
-        textarea.form-control { resize: vertical; min-height: 150px; }
 
         /* --- FOOTER --- */
         footer {
@@ -709,10 +629,11 @@
         /* --- RESPONSIVE --- */
         @media (max-width: 992px) {
             .hero h1 { font-size: 3rem; }
-            .about-grid, .contact-container { grid-template-columns: 1fr; gap: 50px; }
+            .about-grid { grid-template-columns: 1fr; gap: 50px; }
             .about-img { height: 400px; }
-            .header-controls .btn { display: none; } /* Simplified mobile nav for demo */
+            .header-controls .btn { display: none; }
             .logo { font-size: 1.8rem; }
+            .contact-container { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
@@ -734,44 +655,20 @@
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#gallery">Gallery</a></li> <!-- Link to new gallery -->
                     <li><a href="#areas">Service Areas</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-controls">
-                <!-- Admin Photos Button -->
-                <button class="control-btn" id="adminPhotosBtn" title="Upload Your Photos">
-                    <svg viewBox="0 0 24 24"><path d="M8.5,13.5L11,16.5L14.5,12L19,18H5M21,19V5C21,3.89 20.1,3 19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19Z"></path></svg>
-                </button>
-                
-                <!-- Theme Toggle -->
+                <!-- Theme Toggle Only -->
                 <button class="control-btn" id="themeToggle" aria-label="Toggle Dark Mode">
-                    <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"></path></svg>
-                    <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12,7A5,5,0,1,0,17,12A5,5,0,0,0,12,7Zm0,8A3,3,0,1,1,15,12,3,3,0,1,12,15Zm0-14A1,1,0,0,0,11,2V4A1,1,0,0,0,13,4V2A1,1,0,0,0,12,1Zm0,22a1,1,0,0,0-1,1v2a1,1,0,0,0,2,0V24A1,1,0,0,0,12,23ZM22.66,6.34a1,1,0,0,0-1.41,0l-1.42,1.42a1,1,0,1,0,1.42,1.42l1.41-1.42A1,1,0,0,0,22.66,6.34ZM5.17,18.83a1,1,0,0,0-1.42,0L2.34,20.24a1,1,0,1,0,1.42,1.42l1.41-1.42A1,1,0,0,0,5.17,18.83ZM21.25,20.24l-1.41-1.42a1,1,0,1,0-1.42,1.42l1.41,1.42a1,1,0,0,0,1.42-1.42ZM4.17,7.76L5.58,6.34A1,1,0,1,0,4.17,4.93L2.75,6.34A1,1,0,0,0,4.17,7.76ZM23,11H21a1,1,0,0,0,0,2h2a1,1,0,0,0,0-2ZM3,11H1a1,1,0,0,0,0,2H3a1,1,0,0,0,0-2Z"></path></svg>
+                    <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12,1A11,11,0,1,0,23,12,11,11,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"></path></svg>
+                    <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12,7A5,5,0,1,0,17,12A5,5,0,0,0,12,7Zm0,8A3,3,0,1,1,15,12,3,3,0,1,12,15Zm0-14A1,1,0,0,0,11,2V4A1,1,0,0,0,13,4V2A1,1,0,0,0,12,1Zm0,22a1,1,0,0,0-1,1v2a1,1,0,0,0,2,0V24A1,1,0,0,0,12,23ZM22.66,6.34a1,1,0,0,0-1.41,0l-1.42,1.42a1,1,0,1,0,1.42,1.42l1.41-1.42A1,1,0,0,0,22.66,6.34ZM5.17,18.83a1,1,0,0,0-1.42,0L2.34,20.24a1,1,0,1,0,1.42,1.42l1.41-1.42A1,1,0,0,0,5.17,18.83ZM21.25,20.24l-1.41-1.42a1,1,0,1,0-1.42,1.42l1.41,1.42a1,1,0,0,0,1.42-1.42ZM4.17,7.76L5.58,6.34A1,1,0,1,0,4.17,4.93L2.75,6.34A1,1,0,0,0,4.17,7.76ZM23,11H21a1,1,0,0,0,2h2a1,1,0,0,0,0-2ZM3,11H1a1,1,0,0,0,2H3a1,1,0,0,0,0-2Z"></path></svg>
                 </button>
                 <a href="#contact" class="btn btn-primary">Connect Now</a>
             </div>
         </div>
     </header>
-
-    <!-- Admin Modal for Photos -->
-    <div id="photoModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" id="closeModal">×</span>
-            <h2 style="margin-bottom: 10px;">Upload Photos</h2>
-            <p style="color: var(--text-gray); margin-bottom: 20px;">Select images from your device to add to gallery. Images are saved to your browser automatically.</p>
-            
-            <!-- Added 'multiple' attribute to allow uploading several files at once -->
-            <input type="file" id="fileInput" accept="image/*" multiple style="display: none;">
-            <div class="upload-area" id="dropArea">
-                <svg style="width:40px;height:40px;fill:var(--text-gray);margin-bottom:10px;" viewBox="0 0 24 24"><path d="M9,16V10H5L12,3L19,10H15V16H9M5,20V18H19V20H5Z"></path></svg>
-                <p>Click to Select Photos (Multiple Allowed)</p>
-            </div>
-            
-            <button id="uploadBtn" class="btn btn-primary" style="width:100%; margin-top:20px;">Upload Images</button>
-        </div>
-    </div>
 
     <!-- Hero -->
     <section class="hero">
@@ -781,7 +678,7 @@
             <div class="hero-content reveal">
                 <div class="badge-free">Free Estimates</div>
                 <h1>Innovative Plumbing Solutions</h1>
-                <p>25+ plus Years of Experience in the industry. From new builds to emergency repairs, JT Plumbing delivers professional solutions for Fayetteville and beyond.</p>
+                <p>25+ plus Years of Experience in industry. From new builds to emergency repairs, JT Plumbing delivers professional solutions for Fayetteville and beyond.</p>
                 <a href="#contact" class="btn btn-primary">Connect Now</a>
             </div>
         </div>
@@ -793,9 +690,9 @@
             <div class="about-grid">
                 <div class="about-text reveal">
                     <span class="about-label">Who We Are</span>
-                    <h2>Deep Roots in the Ozarks</h2>
-                    <p>With over two decades of experience, we are confident we can meet your needs whatever they may be. We understand the unique plumbing challenges of the region, from the historic homes of Fayetteville to the new developments in Farmington.</p>
-                    <p>We believe in honest work, transparent pricing, and showing up when we say we will. Our team is fully licensed and dedicated to maintaining the integrity of your home or business.</p>
+                    <h2>Deep Roots in Ozarks</h2>
+                    <p>With over two decades of experience, we are confident we can meet your needs whatever they may be. We understand unique plumbing challenges of region, from historic homes of Fayetteville to new developments in Farmington.</p>
+                    <p>We believe in honest work, transparent pricing, and showing up when we say we will. Our team is fully licensed and dedicated to maintaining integrity of your home or business.</p>
                     
                     <div class="stat-row">
                         <div class="stat-item">
@@ -864,20 +761,6 @@
         </div>
     </section>
 
-    <!-- New Gallery Section for Admin Uploads -->
-    <section id="gallery" class="section-padding gallery-section">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Recent Work</h2>
-                <p>A gallery of our latest projects and installations.</p>
-            </div>
-            <!-- Gallery Grid is now EMPTY. Images will be added via Admin Upload tool -->
-            <div class="gallery-grid" id="galleryGrid">
-                <!-- Use the "Upload Photos" button in the top toolbar to add your own images. -->
-            </div>
-        </div>
-    </section>
-
     <!-- Areas -->
     <section id="areas" class="areas-banner">
         <div class="container areas-content reveal">
@@ -898,22 +781,14 @@
     <section id="contact" class="section-padding contact">
         <div class="container">
             <div class="contact-container">
+                <!-- Left Side: Text Info -->
                 <div class="contact-info reveal">
-                    <span class="about-label">Get In Touch</span>
-                    <h2>Ready to Connect?</h2>
-                    <p style="margin-bottom: 40px; color: var(--text-gray);">Fill out the form or give us a call. We are ready to tackle your plumbing challenges.</p>
+                    <span class="about-label">Contact Us</span>
+                    <!-- REMOVED: <h2>Ready to get started?</h2> -->
                     
                     <div class="info-block">
                         <h4>
                             <svg style="width:20px;height:20px;fill:var(--accent-blue)" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
-                            Phone
-                        </h4>
-                        <p>(817) 727-9444</p>
-                    </div>
-                    
-                    <div class="info-block">
-                        <h4>
-                            <svg style="width:20px;height:20px;fill:var(--accent-blue)" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
                             Service Area
                         </h4>
                         <p>Fayetteville, Prairie Grove, Lincoln, Farmington & Surrounding Areas</p>
@@ -931,31 +806,27 @@
                     </div>
                 </div>
 
-                <div class="form-box reveal">
-                    <form id="serviceForm">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="John Doe" required="">
+                <!-- Right Side: Call Card -->
+                <div class="contact-call-box reveal">
+                    <div class="call-icon-large">
+                         <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                    </div>
+                    
+                    <div class="call-details">
+                        <!-- REPLACED: <h3>Call Us Directly</h3> -->
+                        <h3>Call or Text Us Directly</h3>
+                        
+                        <p>Fast, reliable service. We are ready to serve you.</p>
+                        
+                        <div class="phone-numbers">
+                            <div class="big-phone">(817) 727-9444</div>
+                            <span class="or-text">or</span>
+                            <div class="big-phone">(817) 948-8119</div>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" placeholder="john@example.com" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Needed</label>
-                            <select id="service" class="form-control">
-                                <option value="repair">Residential Repair</option>
-                                <option value="newbuild">New Build</option>
-                                <option value="remodel">Remodel</option>
-                                <option value="commercial">Small Commercial</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Project Details</label>
-                            <textarea id="message" class="form-control" placeholder="Tell us about your plumbing needs..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Connect Now</button>
-                    </form>
+                    </div>
+                    
+                    <!-- This link triggers phone dialer on mobile devices -->
+                    <a href="tel:8177279444" class="btn btn-primary btn-large">Call Now</a>
                 </div>
             </div>
         </div>
@@ -1036,167 +907,29 @@
             }
         });
 
-        // --- Form Handling ---
-        const form = document.getElementById('serviceForm');
+        // --- Notification Handling ---
         const notification = document.getElementById('notification');
         const notifText = document.getElementById('notifText');
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const btn = form.querySelector('button');
-            const originalText = btn.innerText;
-            btn.innerText = 'Sending...';
-            btn.style.opacity = '0.7';
-            
+        // Function to show notification (simple helper)
+        function showMessage(message, duration = 4000) {
+            notifText.innerText = message;
+            notification.classList.add('show');
             setTimeout(() => {
-                notifText.innerText = "Request Sent Successfully!";
-                notification.classList.add('show');
-                form.reset();
-                btn.innerText = originalText;
-                btn.style.opacity = '1';
-
-                setTimeout(() => {
-                    notification.classList.remove('show');
-                }, 4000);
-            }, 1500);
-        });
-
-        // --- Admin Photo Upload Logic (Auto-Save to Local Storage) ---
-        const adminBtn = document.getElementById('adminPhotosBtn');
-        const modal = document.getElementById('photoModal');
-        const closeModal = document.getElementById('closeModal');
-        const fileInput = document.getElementById('fileInput');
-        const dropArea = document.getElementById('dropArea');
-        const uploadBtn = document.getElementById('uploadBtn');
-        const galleryGrid = document.getElementById('galleryGrid');
-        
-        // Storage Key
-        const STORAGE_KEY = 'jt_plumbing_gallery_images';
-
-        // Function: Load images from Local Storage
-        function loadImagesFromStorage() {
-            try {
-                const storedImages = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-                
-                if (storedImages.length > 0) {
-                    storedImages.forEach(imgSrc => {
-                        const newItem = document.createElement('div');
-                        newItem.className = 'gallery-item reveal active'; // active to show immediately
-                        
-                        const img = document.createElement('img');
-                        img.src = imgSrc;
-                        img.alt = "Saved Photo";
-                        
-                        newItem.appendChild(img);
-                        galleryGrid.appendChild(newItem);
-                    });
-                }
-            } catch (e) {
-                console.warn("Could not load images from storage", e);
-            }
+                notification.classList.remove('show');
+            }, duration);
         }
 
-        // Execute Load Function immediately when DOM is ready
-        document.addEventListener('DOMContentLoaded', loadImagesFromStorage);
-
-        // Open Modal
-        adminBtn.addEventListener('click', () => {
-            modal.style.display = 'flex';
-        });
-
-        // Close Modal
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-        
-        window.addEventListener('click', (e) => {
-            if (e.target == modal) {
-                modal.style.display = 'none';
-            }
-        });
-
-        // Trigger file input
-        dropArea.addEventListener('click', () => {
-            fileInput.click();
-        });
-
-        // Handle File Selection Display
-        fileInput.addEventListener('change', (e) => {
-            const files = e.target.files;
-            if (files.length > 0) {
-                dropArea.querySelector('p').innerText = `${files.length} Image(s) Selected`;
-                dropArea.style.borderColor = "var(--accent-blue)";
-            } else {
-                dropArea.querySelector('p').innerText = "Click to Select Photos (Multiple Allowed)";
-                dropArea.style.borderColor = "var(--text-gray)";
-            }
-        });
-
-        // Handle Upload
-        uploadBtn.addEventListener('click', () => {
-            if (fileInput.files && fileInput.files.length > 0) {
-                const files = Array.from(fileInput.files);
-                
-                // 1. Get current list from storage to append to it
-                let storedImages = [];
-                try {
-                    storedImages = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-                } catch(e) { console.error(e); }
-
-                // 2. Process all files
-                files.forEach(file => {
-                    const reader = new FileReader();
-
-                    reader.onload = function(e) {
-                        const base64Image = e.target.result;
-                        
-                        // Add to DOM immediately
-                        const newItem = document.createElement('div');
-                        newItem.className = 'gallery-item reveal active';
-                        
-                        const img = document.createElement('img');
-                        img.src = base64Image;
-                        img.alt = "Admin Upload";
-                        
-                        newItem.appendChild(img);
-                        galleryGrid.prepend(newItem);
-
-                        // Add to storage array
-                        storedImages.push(base64Image);
-                    }
-
-                    reader.readAsDataURL(file);
-                });
-
-                // 3. Save updated array back to Local Storage (After reading all files)
-                setTimeout(() => {
-                    try {
-                        localStorage.setItem(STORAGE_KEY, JSON.stringify(storedImages));
-                        notifText.innerText = `${files.length} Photo(s) Uploaded & Saved!`;
-                    } catch (e) {
-                        console.error("Quota Exceeded", e);
-                        alert("Storage Quota Exceeded! Images may not be saved after you close the browser. Please compress images.");
-                        notifText.innerText = "Uploaded (Storage Error)";
-                    }
-                    
-                    // Reset UI
-                    modal.style.display = 'none';
-                    fileInput.value = ''; 
-                    dropArea.querySelector('p').innerText = "Click to Select Photos (Multiple Allowed)";
-                    dropArea.style.borderColor = "var(--text-gray)";
-                    
-                    notification.classList.add('show');
-                    setTimeout(() => {
-                        notification.classList.remove('show');
-                    }, 4000);
-                }, 500);
-            } else {
-                alert("Please select at least one image file.");
-            }
-        });
+        // --- Call Button Click Simulation ---
+        const callNowBtn = document.querySelector('a[href="tel:8177279444"]');
+        if(callNowBtn) {
+            callNowBtn.addEventListener('click', (e) => {
+                e.preventDefault(); // Stop default link behavior
+                // Simulate a call action
+                showMessage("Initiating Call to (817) 727-9444...");
+            });
+        }
     </script>
-
 </body>
 </html>
 ```
